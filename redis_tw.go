@@ -24,20 +24,20 @@ type RedisClusterInfo struct {
 
 func NewRedisInfo(addr, password string) RedisInfo {
 	return RedisInfo{
-		Addr: addr,
-		Password:  password,
-		Db:  0,
-		PoolSize:  0,
-		MinIdleConns:  0,
+		Addr:         addr,
+		Password:     password,
+		Db:           0,
+		PoolSize:     0,
+		MinIdleConns: 0,
 	}
 }
 
 func NewRedisClusterInfo(addrs []string, password string) RedisClusterInfo {
 	return RedisClusterInfo{
-		Addrs: addrs,
-		Password:  password,
-		PoolSize:  0,
-		MinIdleConns:  0,
+		Addrs:        addrs,
+		Password:     password,
+		PoolSize:     0,
+		MinIdleConns: 0,
 	}
 }
 
@@ -58,9 +58,9 @@ func RedisClose() {
 
 func RedisClusterInit(redisClusterInfo *RedisClusterInfo) *redis.ClusterClient {
 	RedisTwCluster := redis.NewClusterClient(&redis.ClusterOptions{
-		Addrs:    redisClusterInfo.Addrs,
-		Password: redisClusterInfo.Password,
-		PoolSize: redisClusterInfo.PoolSize,
+		Addrs:        redisClusterInfo.Addrs,
+		Password:     redisClusterInfo.Password,
+		PoolSize:     redisClusterInfo.PoolSize,
 		MinIdleConns: redisClusterInfo.MinIdleConns,
 	})
 	return RedisTwCluster
