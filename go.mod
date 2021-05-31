@@ -1,4 +1,4 @@
-module redis_tw
+module github.com/tw-iot/redis_tw
 
 go 1.15
 
